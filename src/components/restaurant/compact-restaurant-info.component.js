@@ -22,9 +22,10 @@ const Item = styled.View`
   align-items: center;
 `;
 
-export const CompactRestaurantInfo = ({ restaurant }) => {
-  const isAndroid = Platform.OS === "android";
-  const Compact = isAndroid ? CompactWebView : CompactImage;
+const isAndroid = Platform.OS === "android";
+
+export const CompactRestaurantInfo = ({ restaurant, isMap = false }) => {
+  const Compact = isAndroid && isMap ? CompactWebView : CompactImage;
   return (
     <Item>
       <Compact source={{ uri: restaurant.photos[0] }} />
