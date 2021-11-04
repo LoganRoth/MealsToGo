@@ -14,3 +14,5 @@ api_keys/
 
 # macOS
 .DS_Store
+
+*/node_modules/**/*
